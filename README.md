@@ -11,6 +11,9 @@ Make sure you do NOT have `pdoc` and only use `pip install pdoc3` or there
 might be package conflicts.
 
 ## References
-In the code, I sometimes reference back to the original paper.
+In the code, I sometimes reference back to the original paper + other resources.
 
-> [1] https://arxiv.org/pdf/1801.01290  
+> [1] [paper](https://arxiv.org/pdf/1801.01290)  
+> [2] [lib](https://skrl.readthedocs.io/en/latest/) - provided by Sorina  
+> [3] [article](https://medium.com/@sthanikamsanthosh1994/reinforcement-learning-part-5-soft-actor-critic-sac-network-using-tensorflow2-697917b4b752)  
+> [4] [video](https://github.com/philtabor/Youtube-Code-Repository/blob/master/ReinforcementLearning/PolicyGradient/SAC/)
