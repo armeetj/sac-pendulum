@@ -62,7 +62,9 @@ def plot(progress_data, fig, ax, checkpoint_dir, plot_script=False):
     ax[0].clear()
     ax[1].clear()
 
-    def smoothed(data, window_sz=1000):
+    def smoothed(data, window_sz=100):
+        if len(data) < window_sz:
+            return data
         return np.convolve(data, np.ones(window_sz) / window_sz, mode="valid")
 
     scores = smoothed(scores)

@@ -49,8 +49,8 @@ if __name__ == "__main__":
     # config
     mode = args.mode
     env_config = {
-        "name": "InvertedDoublePendulum-v5",
-        "slug": "invp_v5",
+        "name": "InvertedDoublePendulum-v4",
+        "slug": "invp_v4",
     }
     train_config = {
         "batch_size": args.batch_size,
@@ -106,6 +106,7 @@ if __name__ == "__main__":
             obs_, reward, done, truncated, info = env.step(action)
             score += float(reward)
             agent.remember(obs, action, reward, obs_, done or truncated)
+            done = done or truncated
             if mode != "replay":
                 agent.learn()
             obs = obs_
