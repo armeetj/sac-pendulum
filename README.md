@@ -8,6 +8,12 @@ After 614 episodes (< 5 min of training).
 
 **Demo**:
 
+Here, I've enabled keyboard inputs, which correspond to 0.7 * max_action of left/right input. It's amazing to see how the
+actor recovers almost instantly. Of course, for more catastrophic events (like me holding down an arrow key), it is impossible to recover.
+
+https://github.com/user-attachments/assets/8a95bb82-0e4c-4296-a050-814929aa3f20
+
+
 
 https://github.com/user-attachments/assets/d70811ca-e7ba-4bd9-a8f8-0a89237f166b
 
