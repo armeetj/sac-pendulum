@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 import argparse
 from utils import plot, save_progress, load_progress
+import pygame
 
 
 def parse_args():
@@ -43,6 +44,7 @@ def parse_args():
 
 
 if __name__ == "__main__":
+    screen = pygame.display.set_mode((400, 300))
     matplotlib.use("Agg")
     args = parse_args()
 
@@ -103,6 +105,15 @@ if __name__ == "__main__":
         score = 0
         while not done:
             action = agent.select_action(obs)
+            if mode == "replay":
+                for event in pygame.event.get():
+                    if event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
+                        action = np.array([-max_action * 0.7])
+                        print("Manual override: Moving Left")
+                    elif event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT:
+                        action = np.array([max_action * 0.7])
+                        print("Manual override: Moving Right")
+
             obs_, reward, done, truncated, info = env.step(action)
             score += float(reward)
             agent.remember(obs, action, reward, obs_, done or truncated)
