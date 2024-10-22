@@ -92,8 +92,8 @@ hljs.highlightAll();
 
         self.fc1 = nn.Linear(n_obs, hidden_dims)
         self.fc2 = nn.Linear(hidden_dims, hidden_dims)
-        self.mu = nn.Linear(self.hidden_dims, self.n_actions)
-        self.ln_sigma = nn.Linear(self.hidden_dims, self.n_actions)
+        self.mu = nn.Linear(hidden_dims, self.n_actions)
+        self.ln_sigma = nn.Linear(hidden_dims, self.n_actions)
 
     def forward(self, states: torch.Tensor) -&gt; torch.distributions.Distribution:
         x = F.relu(self.fc1(states))
@@ -127,7 +127,7 @@ hljs.highlightAll();
 <span>def <span class="ident">forward</span></span>(<span>self, states: torch.Tensor) ‑> torch.distributions.distribution.Distribution</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Defines the computation performed at every call.</p>
+<div class="desc"><p>Define the computation performed at every call.</p>
 <p>Should be overridden by all subclasses.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -151,7 +151,7 @@ registered hooks while the latter silently ignores them.</p>
 </code></dt>
 <dd>
 <div class="desc"><p>Critic Network</p>
-<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p></div>
+<p>Initialize internal Module state, shared by both nn.Module and ScriptModule.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -162,6 +162,7 @@ registered hooks while the latter silently ignores them.</p>
     &#34;&#34;&#34;
 
     def __init__(self, n_obs: int, n_actions: int, hidden_dims: int):
+        super().__init__()
         self.slug_name = &#34;critic_network&#34;
 
         self.n_obs = n_obs
@@ -188,7 +189,7 @@ registered hooks while the latter silently ignores them.</p>
 <span>def <span class="ident">forward</span></span>(<span>self, state: torch.Tensor, action: torch.Tensor) ‑> torch.Tensor</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Defines the computation performed at every call.</p>
+<div class="desc"><p>Define the computation performed at every call.</p>
 <p>Should be overridden by all subclasses.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -206,7 +207,7 @@ registered hooks while the latter silently ignores them.</p>
 </code></dt>
 <dd>
 <div class="desc"><p>Value Network</p>
-<p>Initializes internal Module state, shared by both nn.Module and ScriptModule.</p></div>
+<p>Initialize internal Module state, shared by both nn.Module and ScriptModule.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -217,6 +218,7 @@ registered hooks while the latter silently ignores them.</p>
     &#34;&#34;&#34;
 
     def __init__(self, n_obs: int, hidden_dims: int):
+        super().__init__()
         self.slug_name = &#34;critic_network&#34;
 
         self.n_obs = n_obs
@@ -241,7 +243,7 @@ registered hooks while the latter silently ignores them.</p>
 <span>def <span class="ident">forward</span></span>(<span>self, state: torch.Tensor) ‑> torch.Tensor</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Defines the computation performed at every call.</p>
+<div class="desc"><p>Define the computation performed at every call.</p>
 <p>Should be overridden by all subclasses.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
