@@ -18,7 +18,7 @@ https://github.com/user-attachments/assets/8a95bb82-0e4c-4296-a050-814929aa3f20
 https://github.com/user-attachments/assets/d70811ca-e7ba-4bd9-a8f8-0a89237f166b
 
 **Score Plots**:
-![v4_scores](https://github.com/user-attachments/assets/d0c9dff2-8b22-4266-938d-7ccb151ccd6a)
+![plot](https://github.com/user-attachments/assets/f575a354-38ec-4680-9cdb-efd275bb23f3)
 
 
 ## v5
