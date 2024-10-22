@@ -1,9 +1,23 @@
 # sac-pendulum
 Inverted double pendulum with Soft Actor Critic (SAC) RL model.
 
+## v4
+**Highest score**: 9359.85
+
+After 614 episodes (< 5 min of training).
+
+**Demo**:
+
+
+https://github.com/user-attachments/assets/d70811ca-e7ba-4bd9-a8f8-0a89237f166b
+
+**Score Plots**:
+![v4_scores](https://github.com/user-attachments/assets/d0c9dff2-8b22-4266-938d-7ccb151ccd6a)
+
+
 ## v5
 
-I trained the double inverted pendulum using InvertedDoublePendulum-v5 earlier. There was some confusion, and other group members used v4, so I reran my code for v4 as well (see v4 heading)!
+I trained the double inverted pendulum using InvertedDoublePendulum-v5 earlier. There was some confusion, and other group members used v4, but I wanted to include my v5 results anyways!
 
 **Highest score**: 82,812
 
