@@ -40,8 +40,8 @@ class ActorNetwork(nn.Module):
 
         self.fc1 = nn.Linear(n_obs, hidden_dims)
         self.fc2 = nn.Linear(hidden_dims, hidden_dims)
-        self.mu = nn.Linear(self.hidden_dims, self.n_actions)
-        self.ln_sigma = nn.Linear(self.hidden_dims, self.n_actions)
+        self.mu = nn.Linear(hidden_dims, self.n_actions)
+        self.ln_sigma = nn.Linear(hidden_dims, self.n_actions)
 
     def forward(self, states: torch.Tensor) -> torch.distributions.Distribution:
         x = F.relu(self.fc1(states))
@@ -72,6 +72,7 @@ class CriticNetwork(nn.Module):
     """
 
     def __init__(self, n_obs: int, n_actions: int, hidden_dims: int):
+        super().__init__()
         self.slug_name = "critic_network"
 
         self.n_obs = n_obs
@@ -95,6 +96,7 @@ class ValueNetwork(nn.Module):
     """
 
     def __init__(self, n_obs: int, hidden_dims: int):
+        super().__init__()
         self.slug_name = "critic_network"
 
         self.n_obs = n_obs

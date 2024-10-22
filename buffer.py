@@ -8,6 +8,7 @@ class Frame(NamedTuple):
     action: Any
     reward: Any
     state_next: Any
+    done: bool
 
 
 class ReplayBuffer:
